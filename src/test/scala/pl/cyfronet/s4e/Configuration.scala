@@ -12,6 +12,7 @@ object Configuration {
   val UsersTimePeriod: Int = conf.getInt("users.time.period")
 
   val RepeatScenario: Int = conf.getInt("repeat.scenario")
+  val LayerName: String = conf.getString("layer.name")
 
   val ReachReps: Int = conf.getInt("reps.reach")
   val RepsInTime: Int = conf.getInt("reps.in.time")
