@@ -22,9 +22,14 @@ class DownloadFromPresignS3Url {
           .check(status.is(302))
           .check(header("Location").saveAs("url"))
         )
-        .exec(http("GS-${counterName} - redirect")
+        .doIfOrElse(Configuration.s3Download){
+          exec(http("GS-${counterName} - redirect")
             .get("${url}")
-        )
+            .header("Content-Type", "application/force-download"))
+        }{
+          exec(http("GS-${counterName} - redirect")
+            .get("${url}"))
+        }
 //        .exec( session => {
 //          println(session( "url" ).as[String] )
 //          session

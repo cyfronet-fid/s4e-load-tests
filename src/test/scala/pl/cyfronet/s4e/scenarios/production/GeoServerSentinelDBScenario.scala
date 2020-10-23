@@ -27,7 +27,8 @@ class GeoServerSentinelDBScenario {
             "&TIME=${timestamp}&CRS=EPSG%3A3857&STYLES=&WIDTH=1454&HEIGHT=1358" +
             "&BBOX=261720.38484844333%2C5224623.757348367%2C3818182.436901124%2C8546271.258508986")
           .headers(GSHeaders.headers_7)
-          .check(bodyString.transform(_.size > 40000).is(true))
+          .check(status.is(200))
+          .check(bodyString.transform(_.size > 35000).is(true))
         )
     }
 

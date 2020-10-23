@@ -13,6 +13,7 @@ object Configuration {
 
   val RepeatScenario: Int = conf.getInt("repeat.scenario")
   val LayerName: String = conf.getString("layer.name")
+  val s3Download: Boolean = conf.getBoolean("s3.force.download")
 
   val ReachReps: Int = conf.getInt("reps.reach")
   val RepsInTime: Int = conf.getInt("reps.in.time")
