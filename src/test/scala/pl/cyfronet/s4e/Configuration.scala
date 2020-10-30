@@ -8,6 +8,8 @@ object Configuration {
   val conf = ConfigFactory.load()
 
   val BaseUrl = conf.getString("base.url")
+  val WebBaseUrl = conf.getString("web.base.url")
+  val GsBaseUrl = conf.getString("gs.base.url")
   val UsersNumber: Int = conf.getInt("users.number")
   val UsersTimePeriod: Int = conf.getInt("users.time.period")
 

@@ -66,4 +66,11 @@ object Headers {
     "Sec-Fetch-Dest" -> "empty",
     "Sec-Fetch-Mode" -> "cors",
     "Sec-Fetch-Site" -> "same-origin")
+
+  val headers_0_close_ups = Map(
+    "Accept" -> "*/*",
+    "Pragma" -> "no-cache",
+    "Sec-Fetch-Dest" -> "empty",
+    "Sec-Fetch-Mode" -> "cors",
+    "Sec-Fetch-Site" -> "same-origin")
 }
