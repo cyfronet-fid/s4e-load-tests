@@ -21,4 +21,5 @@ class TileCloseUps extends Simulation {
 	val scn = scenario("Sentinels Close Ups").exec(grdh)
 
 	setUp(scn.inject(rampUsers(Configuration.UsersNumber) during Configuration.UsersTimePeriod)).protocols(httpProtocol)
+		.throttle(reachRps(Configuration.ReachReps) in (Configuration.RepsInTime seconds), holdFor(Configuration.RepsForTime minutes))
 }

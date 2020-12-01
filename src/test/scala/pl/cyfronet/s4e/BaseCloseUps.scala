@@ -18,9 +18,7 @@ class BaseCloseUps extends Simulation {
   val grdm = new GrdmCloseUps().getGrdmCloseUps
   val slc = new SlcCloseUps().getSlcCloseUps
 
-  val scn = scenario("Sentinels Close Ups").repeat(50) {
-    exec(grdh, grdm).exec(grdm, slc).exec(slc, grdh)
-  }
+  val scn = scenario("Sentinels Close Ups").exec(grdh, grdm).exec(grdm, slc).exec(slc, grdh)
 //  val scn2 = scenario("Sentinels Close Ups 2").repeat(10) {
 //    exec(slc, grdh).exec(grdh, grdm).exec(grdm, slc)
 //  }
